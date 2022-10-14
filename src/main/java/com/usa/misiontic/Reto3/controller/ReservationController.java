@@ -1,6 +1,8 @@
 package com.usa.misiontic.Reto3.controller;
 
 
+import com.usa.misiontic.Reto3.entities.DTOs.CountClient;
+import com.usa.misiontic.Reto3.entities.DTOs.CountStatus;
 import com.usa.misiontic.Reto3.entities.Message;
 import com.usa.misiontic.Reto3.entities.Reservation;
 import com.usa.misiontic.Reto3.service.ReservationService;
@@ -38,4 +40,20 @@ public class ReservationController {
     public boolean delete(@PathVariable("id")  int id){
         return reservationService.delete(id);
     }
+
+    @GetMapping("/report-status")
+    public CountStatus getReportReservationsStatus() {
+        return reservationService.getReservationsStatus();
+    }
+
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReportReservationBetweenDates(@PathVariable("dateOne") String dateOne,@PathVariable("dateTwo") String dateTwo) {
+        return reservationService.getReservationBetweenDates(dateOne, dateTwo);
+    }
+
+    @GetMapping("/report-clients")
+    public List<CountClient> getReportClientesCaletos() {
+        return reservationService.getClientesCaletos();
+    }
+
 }
