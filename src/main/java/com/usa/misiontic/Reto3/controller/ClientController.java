@@ -2,6 +2,7 @@ package com.usa.misiontic.Reto3.controller;
 
 
 import com.usa.misiontic.Reto3.entities.Client;
+import com.usa.misiontic.Reto3.entities.Partyroom;
 import com.usa.misiontic.Reto3.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,5 +25,17 @@ public class ClientController {
     @ResponseStatus(HttpStatus.CREATED)
     public Client save(@RequestBody  Client c){
         return clientService.save(c);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Client update(@RequestBody  Client p){
+        return clientService.update(p);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id")  int id){
+        return clientService.delete(id);
     }
 }

@@ -20,11 +20,11 @@ public class PartyroomRepository {
     public Optional<Partyroom> getPartyroom(int id){
         return partyroomCrudRepository.findById(id);
     }
-    public Partyroom save(Partyroom c){
-        return partyroomCrudRepository.save(c);
+    public Partyroom save(Partyroom p){
+        return partyroomCrudRepository.save(p);
     }
-    public void delete(Partyroom c){
-        partyroomCrudRepository.delete(c);
+    public void delete(Partyroom p){
+        partyroomCrudRepository.delete(p);
     }
 
 }

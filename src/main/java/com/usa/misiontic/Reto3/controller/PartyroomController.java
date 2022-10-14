@@ -25,4 +25,16 @@ public class PartyroomController {
     public Partyroom save(@RequestBody  Partyroom p){
         return partyroomService.save(p);
     }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Partyroom update(@RequestBody  Partyroom p){
+        return partyroomService.update(p);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id")  int id){
+        return partyroomService.delete(id);
+    }
 }
