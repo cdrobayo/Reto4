@@ -87,7 +87,7 @@ public class ReservationService {
         Date b = new Date();
         try{
             a = parser.parse(dateA);
-            a = parser.parse(dateB);
+            b = parser.parse(dateB);
         } catch (ParseException error){
             error.printStackTrace();
         }
